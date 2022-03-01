@@ -1,4 +1,4 @@
-package dkarlsso.commons.repository;
+package dkarlsso.commons.repository.settings;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
@@ -12,10 +12,10 @@ import java.util.function.Supplier;
 
 /**
  * Repository used for storing simple things such as settings on the hard drive
- * @param <T>
+ * @param <T> class of stored type
  */
 @Slf4j
-public class FileDataRepository <T> {
+public class SettingsFilesystemRepository<T> {
 
     private final Class<T> clazz;
 
@@ -25,9 +25,9 @@ public class FileDataRepository <T> {
 
     private final Supplier<T> fallbackSupplier;
 
-    public FileDataRepository(final Class<T> clazz,
-                              final String filepath,
-                              final Supplier<T> fallbackSupplier) {
+    public SettingsFilesystemRepository(final Class<T> clazz,
+                                        final String filepath,
+                                        final Supplier<T> fallbackSupplier) {
         this.clazz = clazz;
         this.filepath = filepath;
         this.fallbackSupplier = fallbackSupplier;
