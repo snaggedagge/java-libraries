@@ -1,0 +1,5 @@
+rootProject.name = 'java-libraries'
+include 'webportal-connector'
+include 'commons'
+include 'commons-persistance'
+include 'commons-raspberry'

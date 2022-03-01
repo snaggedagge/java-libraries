@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+}
+
+group 'dkarlsso'
+
+dependencies {
+
+    implementation project(":commons")
+
+    implementation group: 'edu.cmu.sphinx', name: 'sphinx4-core', version:'5prealpha-SNAPSHOT'
+    implementation group: 'edu.cmu.sphinx', name: 'sphinx4-data', version:'5prealpha-SNAPSHOT'
+}

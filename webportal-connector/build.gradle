@@ -1,0 +1,8 @@
+dependencies {
+    implementation project(':commons-persistance')
+
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.16'
+}

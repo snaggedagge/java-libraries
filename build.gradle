@@ -1,0 +1,24 @@
+subprojects {
+	apply plugin: 'java'
+	apply plugin: 'maven-publish'
+
+	sourceCompatibility = 17
+	targetCompatibility = 17
+
+	publishing {
+		publications {
+			mavenJava(MavenPublication) {
+				from components.java
+			}
+		}
+	}
+
+	repositories {
+		mavenCentral()
+		//maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+	}
+
+	tasks.withType(JavaCompile) {
+		options.encoding = 'UTF-8'
+	}
+}
