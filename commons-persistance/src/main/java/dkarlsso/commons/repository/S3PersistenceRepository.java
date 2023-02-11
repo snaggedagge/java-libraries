@@ -58,6 +58,7 @@ public class S3PersistenceRepository<PersistedType, IdentifierType>
         client.putObject(PutObjectRequest.builder()
                 .key(keyName)
                 .bucket(bucket)
+                .cacheControl("no-cache")
                 .build(), RequestBody.fromString(content));
     }
 }

@@ -19,7 +19,7 @@ public class SettingsFilesystemRepository<T> {
 
     private final Class<T> clazz;
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper;
 
     private final String filepath;
 
@@ -31,6 +31,8 @@ public class SettingsFilesystemRepository<T> {
         this.clazz = clazz;
         this.filepath = filepath;
         this.fallbackSupplier = fallbackSupplier;
+        this.objectMapper = new ObjectMapper();
+        this.objectMapper.findAndRegisterModules();
     }
 
     @SneakyThrows
