@@ -17,25 +17,25 @@ public class TimedRelay implements TimedRelayInterface {
     @Override
     public void setHigh() {
         relayInterface.setHigh();
-        runningClock.setStartedRunning(relayInterface.isHigh());
+        runningClock.updateState(relayInterface.isHigh());
     }
 
     @Override
     public void setLow() {
         relayInterface.setLow();
-        runningClock.setStartedRunning(relayInterface.isHigh());
+        runningClock.updateState(relayInterface.isHigh());
     }
 
     @Override
     public void setState(boolean state) {
         relayInterface.setState(state);
-        runningClock.setStartedRunning(relayInterface.isHigh());
+        runningClock.updateState(relayInterface.isHigh());
     }
 
     @Override
     public void switchState() {
         relayInterface.switchState();
-        runningClock.setStartedRunning(relayInterface.isHigh());
+        runningClock.updateState(relayInterface.isHigh());
     }
 
     @Override
